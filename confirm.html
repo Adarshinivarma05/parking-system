@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <h1>Booking Confirmation</h1>
+  <p>Your slot has been booked successfully!</p>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const slot = urlParams.get('slot');
+    const hours = parseInt(urlParams.get('hours'), 10);
+    const rate = 10; // ₹10/hour
+    const total = hours * rate;
+
+    document.write("<p>Slot Number: " + slot + "</p>");
+    document.write("<p>Number of Hours: " + hours + "</p>");
+    document.write("<p>Total Amount: ₹" + total + "</p>");
+  </script>
+</body>
+</html>
