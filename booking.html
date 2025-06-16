@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Book a Slot</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <title>Book a Parking Slot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Book a Parking Slot</h1>
-  <form action="confirm.html" method="get">
-    <label for="slot">Slot Number:</label>
-    <input type="text" id="slot" name="slot" required><br><br>
-    
-    <label for="hours">Number of Hours:</label>
-    <input type="number" id="hours" name="hours" required><br><br>
-    
-    <input type="submit" value="Confirm Booking">
-  </form>
+  <header>
+    <h1>Book a Parking Slot</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="slots.html">View Slots</a>
+    </nav>
+  </header>
+  <section>
+    <form id="bookingForm">
+      <label for="slot">Choose a Slot:</label>
+      <select id="slot" name="slot">
+        <!-- Options will be populated by script.js -->
+      </select>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
