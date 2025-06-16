@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #007BFF;
+}
+
+#slots-container div {
+  padding: 10px;
+  margin: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
