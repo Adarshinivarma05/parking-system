@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Parking Slot Booking System</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to the Parking Slot Booking System</h1>
-    <nav>
-      <a href="booking.html">Book a Slot</a>
-      <a href="slots.html">View Available Slots</a>
-      <a href="admin.html">Admin Login</a>
-    </nav>
-  </header>
-  <section>
-    <h2>About</h2>
-    <p>This system allows users to book parking slots and admins to manage bookings.</p>
+  <nav>
+    <button onclick="showPage('loginPage')">Login</button>
+    <button onclick="showPage('registerPage')">Sign Up</button>
+    <button onclick="showPage('bookingPage')">Book Slots</button>
+    <button onclick="showPage('adminPage')">Admin Panel</button>
+  </nav>
+
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="page">
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Enter Username" />
+    <input type="password" id="loginPassword" placeholder="Enter Password" />
+    <div id="loginCaptchaContainer" class="captcha"></div>
+    <input type="text" id="loginCaptchaInput" placeholder="Enter Captcha" />
+    <button onclick="login()">Login</button>
   </section>
+
+  <!-- REGISTER PAGE -->
+  <section id="registerPage" class="page hidden">
+    <h2>Sign Up</h2>
+    <input type="text" id="regUsername" placeholder="Enter Username" />
+    <input type="email" id="regEmail" placeholder="Enter Email" />
+    <input type="password" id="regPassword" placeholder="Enter Password" />
+    <div id="regCaptchaContainer" class="captcha"></div>
+    <input type="text" id="regCaptchaInput" placeholder="Enter Captcha" />
+    <button onclick="register()">Register</button>
+  </section>
+
+  <!-- BOOKING PAGE -->
+  <section id="bookingPage" class="page hidden">
+    <h2>Book a Parking Slot</h2>
+    <label for="bookingDate">Date:</label>
+    <input type="date" id="bookingDate" />
+    <label for="timeSlot">Time Slot:</label>
+    <select id="timeSlot"></select>
+    <button onclick="renderSlots()">Check Availability</button>
+
+    <div id="slots" class="slots"></div>
+  </section>
+
+  <!-- ADMIN PAGE -->
+  <section id="adminPage" class="page hidden">
+    <h2>Admin Panel</h2>
+    <button onclick="showAllBookings()">Show All Bookings</button>
+    <div id="allBookings"></div>
+  </section>
+
+  <!-- THANK YOU PAGE -->
+  <section id="thankYouPage" class="page hidden">
+    <h2>✅ Thank You for Booking!</h2>
+    <p>You will be redirected shortly...</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
